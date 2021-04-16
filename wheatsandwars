@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Turtoi, everything in a small package.">
+        <title>Turtoi</title>
+    </head>
+    <body style="background-color: black; color: black; font-family: Courier New;">
+        <nav style="background-color: cadetblue">
+            <img src="Turtoi.png" width="105" height="80" style="float: left">
+            <h5><a href="index.html">Home</a> <a href="turtoinews.html">Turtoi News</a></h5>
+            <h3><a href="publicjournal.html">Public Journal</a> <a href="fastdrive.html">FASTDRIVE</a>
+            <a href="cookiepp.html">Cookie++</a> <a href="sticker_store.html">Stickers 'N Pins</a></h3>
+        </nav>
+        </hr>
+        
+        <header> Wheats And Wars </header>
