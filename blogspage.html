@@ -160,6 +160,15 @@ a:active {
             };<br/>
           </code></div>
           <br/>
+          This is the class template that all other classes would inherit from, mostly
+          because it is guaranteed that every other class will have these features:
+          <br/>
+          <ul>
+            <li>A name</li>
+            <li>A description</li>
+          </ul>
+          Both of which this class is made for the sole purpose of.
+          <br/>
           <div><code>
             class item: public entity{<br/>
               public:<br/>
@@ -184,6 +193,12 @@ a:active {
             };<br/>
           </code></div>
           <br/>
+          This class is used to make items that of which lie in rooms
+          and inventories, often with great interactability. These items
+          have names and descriptions, and may be destroyed on command by
+          setting the <code>built</code> variable to false, rendering it
+          virtually non-existent.
+          <br/>
           The score of the item would be added to the total score of
           the player once he completes the game or unfortunately dies.
           Other thing you may notice is that items have uses, basically
@@ -206,7 +221,11 @@ a:active {
             };<br/>
           </code></div>
           <br/>
-          This was the (saving writing progress)
+          This was the class used to represent arrays of items with
+          built in management functions. The program would be able to
+          contain at the maximum of 5 items, destroy items, send items
+          to other containers(not practically per-se), and allow
+          simple access to needed elements of specific items.
         </p>
         <hr/><hr/>
         <h2 id="25" style="color:red;">No blog today!</h2><address>17/2/23</address>
