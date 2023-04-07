@@ -6,7 +6,7 @@ table, th, td {
   border-collapse: collapse;
 }
 
-code, span{
+code, div{
   border: 1px solid black;
   background-color: black;
   color: orange;
@@ -118,7 +118,7 @@ a:active {
           <br/>
           I began by writing the template for the program first in c++.
           <br/>
-          <span><code>
+          <div><code>
             //main.cpp
             #include <iostream>
             #include <string>
@@ -131,14 +131,14 @@ a:active {
             
               return 0;
             }
-          </code></span>
+          </code></div>
           <br/>
           Then I began writing the class hierarchy. This is what everything else would
           be built on. It would inherit from the entity class, which held a name and
           description. Then it would branch out into items, rooms, puzzles, and the player
           character.
           <br/>
-          <span><code>
+          <div><code>
             class entity{<br/>
               public:<br/>
 <br/>
@@ -158,9 +158,9 @@ a:active {
                 string e_desc;<br/>
 <br/>
             };<br/>
-          </code></span>
+          </code></div>
           <br/>
-          <span><code>
+          <div><code>
             class item: public entity{<br/>
               public:<br/>
 
@@ -182,7 +182,7 @@ a:active {
                 int score;<br/>
 <br/>
             };<br/>
-          </code></span>
+          </code></div>
           <br/>
           The score of the item would be added to the total score of
           the player once he completes the game or unfortunately dies.
@@ -190,7 +190,7 @@ a:active {
           these are arrays of passwords used to solve the puzzle behind
           the scenes whilst the player finds the solution to the game.
           <br/>
-          <span><code>
+          <div><code>
             class container: public entity{<br/>
               public:<br/>
 <br/>
@@ -204,7 +204,7 @@ a:active {
                 virtual string sendItemDesc(int index);<br/>
 <br/>
             };<br/>
-          </code></span>
+          </code></div>
           <br/>
           This was the (saving writing progress)
         </p>
