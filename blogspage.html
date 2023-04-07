@@ -139,49 +139,49 @@ a:active {
           character.
           <br/>
           <code>
-            class entity{
-              public:
-
-                entity();
-
-                virtual void setName(string init_name);
-                virtual void setDesc(string init_desc);
-
-                virtual void initializeEntity(string init_name, string init_desc);
-
-                virtual string getName();
-                virtual string getDesc();
-
-              protected:
-
-                string e_name;
-                string e_desc;
-
-            };
+            class entity{<br/>
+              public:<br/>
+<br/>
+                entity();<br/>
+<br/>
+                virtual void setName(string init_name);<br/>
+                virtual void setDesc(string init_desc);<br/>
+<br/>
+                virtual void initializeEntity(string init_name, string init_desc);<br/>
+<br/>
+                virtual string getName();<br/>
+                virtual string getDesc();<br/>
+<br/>
+              protected:<br/>
+<br/>
+                string e_name;<br/>
+                string e_desc;<br/>
+<br/>
+            };<br/>
           </code>
           <br/>
           <code>
-            class item: public entity{
-              public:
+            class item: public entity{<br/>
+              public:<br/>
 
-                item();
-                ~item();
-
-                string uses[5];
-
-                bool built;
-
-                virtual void setScore(int des_score);
-                virtual void destroyItem();
-
-                virtual bool sendPermission(string use);
-                virtual int sendScore();
-
-              protected:
-
-                int score;
-
-            };
+                item();<br/>
+                ~item();<br/>
+<br/>
+                string uses[5];<br/>
+<br/>
+                bool built;<br/>
+<br/>
+                virtual void setScore(int des_score);<br/>
+                virtual void destroyItem();<br/>
+<br/>
+                virtual bool sendPermission(string use);<br/>
+                virtual int sendScore();<br/>
+<br/>
+              protected:<br/>
+<br/>
+                int score;<br/>
+<br/>
+            };<br/>
           </code>
           <br/>
           The score of the item would be added to the total score of
@@ -191,19 +191,19 @@ a:active {
           the scenes whilst the player finds the solution to the game.
           <br/>
           <code>
-            class container: public entity{
-              public:
-
-                item contained_items[5];
-
-                virtual void destroyContainedItem(int index);
-
-                virtual item sendItem(int index);
-
-                virtual string sendItemName(int index);
-                virtual string sendItemDesc(int index);
-
-            };
+            class container: public entity{<br/>
+              public:<br/>
+<br/>
+                item contained_items[5];<br/>
+<br/>
+                virtual void destroyContainedItem(int index);<br/>
+<br/>
+                virtual item sendItem(int index);<br/>
+<br/>
+                virtual string sendItemName(int index);<br/>
+                virtual string sendItemDesc(int index);<br/>
+<br/>
+            };<br/>
           </code>
           <br/>
           This was the (saving writing progress)
