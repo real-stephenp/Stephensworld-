@@ -64,6 +64,7 @@ a:active {
             <h2>Blog Index</h2>
           <table>
             <tr>
+              <td><a href="#26">Entry #26</a></td>
               <td><a href="#25">Entry #25</a></td>
             </tr><tr>
               <td><a href="#24">Entry #24</a></td>
@@ -108,11 +109,18 @@ a:active {
         <h2 id="26">Completed Project</h2><address>7/4/23</address>
         <p>
           Hello again... Yes, I know what you want to be screaming at me for. Stephen!
-          What reason in what universe makes sense as t why you've been gone for a <b>month!</b>
+          What reason in what universe makes sense as to why you've been gone for a <b>month!</b>
           I'll tell you why, and its a long story of how I wanted to expand on an idea
           retained from <a href="#8">blog entry no.8</a>. If you are an experienced
           reader of my site, you'll know that I leave no old blog incomplete! A fun
-          project came to my head to build the game. Let's see how the game was built.
+          project came to my head to build the game.
+          <br/><br/>
+          The game is finished and listed on IFDB.org as Delegated: The Cave Adventurer. Fields
+          of Cagen would prove to be too ambitious or my timeframe, considering I have 
+          school to tend to. View it on my main page! Anyways, this blog is about how I
+          built it, not the game itself.
+          <br/><br/>
+          Let's see how the game was built.
           Transitional sequence, engage!
           <br/>
           <br/>
@@ -120,17 +128,17 @@ a:active {
           <br/>
           <div><code>
             //main.cpp
-            #include <iostream>
-            #include <string>
-            #include <cstdio>
-            #include <vector>
-            #include <fstream>
-            using namespace std;
-            
-            int main(){
-            
-              return 0;
-            }
+            #include <iostream><br/>
+            #include <string><br/>
+            #include <cstdio><br/>
+            #include <vector><br/>
+            #include <fstream><br/>
+            using namespace std;<br/>
+            <br/>
+            int main(){<br/>
+            <br/>
+              return 0;<br/>
+            }<br/>
           </code></div>
           <br/>
           Then I began writing the class hierarchy. This is what everything else would
@@ -226,6 +234,50 @@ a:active {
           contain at the maximum of 5 items, destroy items, send items
           to other containers(not practically per-se), and allow
           simple access to needed elements of specific items.
+          <br/>
+          <div><code>
+          class room: public container{<br/>
+            public:<br/>
+<br/>
+              int map_xpos;<br/>
+              int map_ypos;<br/>
+<br/>
+              virtual void setPassages(bool n, bool s, bool e, bool w);<br/>
+<br/>
+              virtual bool exitPermission(int direction);<br/>
+<br/>
+            private:<br/>
+<br/>
+              bool north_pass;<br/>
+              bool south_pass;<br/>
+              bool west_pass;<br/>
+              bool east_pass;<br/>
+<br/>
+          };<br/>
+        </code></div>
+        <br/>
+        This would be the class that represents the room, which interits from
+        a container, which inherits from the entity, so let's recapitulate what
+        the features of a room are as of now:
+            <ul>
+              <li>An observabe name</li>
+              <li>An observable description</li>
+              <li>A vector position</li>
+              <li>An amount of passages</li>
+              <li>An amount of items</li>
+            </ul>
+         The name and description would be printed out as pages of a book. The
+         room has a position on a map that connects it to other rooms. The player
+         would increment and decrement his x and y position, then sequentially
+         search the database of rooms in the program as to know what next description
+         to write. The room has an amount of passages, such as only north and west
+         are the possible exits, which are functional in the end program to allow the
+         player to exit.
+         <br/><br/>
+         I don't know about you, but I sure am tired of explaining the whole game to 
+         you, so I might write another blog about it later, but you should just download
+         the game on my main page! Anyways, don't forget that to you I say hello, and 
+         maybe even goodbye.
         </p>
         <hr/><hr/>
         <h2 id="25" style="color:red;">No blog today!</h2><address>17/2/23</address>
