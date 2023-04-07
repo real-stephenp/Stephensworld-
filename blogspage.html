@@ -5,6 +5,13 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
+code{
+  border: 1px solid black;
+  background-color: black;
+  color: orange;
+}
+      
 a:link {
   color: blue;
   background-color: transparent;
@@ -96,6 +103,110 @@ a:active {
           tags marked <b>black</b> are for undefined miscellanious
           things. Tags marked <b style="color:red;">red</b> are for announcements. Dates are 
           placed right next to the title.
+        </p>
+        <hr/><hr/>
+        <h2 id="26">Completed Project</h2><address>7/4/23</address>
+        <p>
+          Hello again... Yes, I know what you want to be screaming at me for. Stephen!
+          What reason in what universe makes sense as t why you've been gone for a <b>month!</b>
+          I'll tell you why, and its a long story of how I wanted to expand on an idea
+          retained from <a href="#8">blog entry no.8</a>. If you are an experienced
+          reader of my site, you'll know that I leave no old blog incomplete! A fun
+          project came to my head to build the game. Let's see how the game was built.
+          Transitional sequence, engage!
+          <br/>
+          <br/>
+          I began by writing the template for the program first in c++.
+          <br/>
+          <code>
+            //main.cpp
+            #include <iostream>
+            #include <string>
+            #include <cstdio>
+            #include <vector>
+            #include <fstream>
+            using namespace std;
+            
+            int main(){
+            
+              return 0;
+            }
+          </code>
+          <br/>
+          Then I began writing the class hierarchy. This is what everything else would
+          be built on. It would inherit from the entity class, which held a name and
+          description. Then it would branch out into items, rooms, puzzles, and the player
+          character.
+          <br/>
+          <code>
+            class entity{
+              public:
+
+                entity();
+
+                virtual void setName(string init_name);
+                virtual void setDesc(string init_desc);
+
+                virtual void initializeEntity(string init_name, string init_desc);
+
+                virtual string getName();
+                virtual string getDesc();
+
+              protected:
+
+                string e_name;
+                string e_desc;
+
+            };
+          </code>
+          <br/>
+          <code>
+            class item: public entity{
+              public:
+
+                item();
+                ~item();
+
+                string uses[5];
+
+                bool built;
+
+                virtual void setScore(int des_score);
+                virtual void destroyItem();
+
+                virtual bool sendPermission(string use);
+                virtual int sendScore();
+
+              protected:
+
+                int score;
+
+            };
+          </code>
+          <br/>
+          The score of the item would be added to the total score of
+          the player once he completes the game or unfortunately dies.
+          Other thing you may notice is that items have uses, basically
+          these are arrays of passwords used to solve the puzzle behind
+          the scenes whilst the player finds the solution to the game.
+          <br/>
+          <code>
+            class container: public entity{
+              public:
+
+                item contained_items[5];
+
+                virtual void destroyContainedItem(int index);
+
+                virtual item sendItem(int index);
+
+                virtual string sendItemName(int index);
+                virtual string sendItemDesc(int index);
+
+            };
+          </code>
+          <br/>
+          This was the (saving writing progress)
         </p>
         <hr/><hr/>
         <h2 id="25" style="color:red;">No blog today!</h2><address>17/2/23</address>
